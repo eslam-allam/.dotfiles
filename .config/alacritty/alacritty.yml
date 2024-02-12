@@ -16,6 +16,9 @@ font:
     style: italic
 window:
   startup_mode: Maximized
+  decorations: "none"
+  opacity: 0.8
+  dynamic_padding: true
 
 key_bindings:
   - { Key: Tab, mods: Control, chars: "\x1b[9;5u" }
