@@ -1,9 +1,12 @@
 [submodule ".config/alacritty/themes"]
 	path = .config/alacritty/themes
 	url = https://github.com/eendroroy/alacritty-theme.git
+    branch = master
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = git@github.com:eslam-allam/nvim-lazy.git
+    branch = main
 [submodule ".zprezto"]
 	path = .zprezto
 	url = https://github.com/eslam-allam/.zprezto.git
+    branch = master
