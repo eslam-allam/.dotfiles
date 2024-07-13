@@ -1,12 +1,12 @@
-[submodule ".config/alacritty/themes"]
-	path = .config/alacritty/themes
+[submodule "dot-config/alacritty/themes"]
+	path = dot-config/alacritty/themes
 	url = https://github.com/eendroroy/alacritty-theme.git
     branch = master
-[submodule ".config/nvim"]
-	path = .config/nvim
+[submodule "dot-config/nvim"]
+	path = dot-config/nvim
 	url = https://github.com/eslam-allam/nvim-lazy.git
     branch = main
-[submodule ".zprezto"]
-	path = .zprezto
+[submodule "dot-zprezto"]
+	path = dot-zprezto
 	url = https://github.com/eslam-allam/.zprezto.git
     branch = master
