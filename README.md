@@ -61,6 +61,14 @@ go install github.com/eslam-allam/spring-initializer-go/cmd/spring-initializer@l
 
 - [Neovim](https://github.com/neovim/neovim)
 - [Tmux](https://github.com/tmux/tmux)
+
+  - Install GitMux
+
+    ```bash
+    go install github.com/arl/gitmux@latest
+    ```
+
   > Don't forget to install plugins \<c-a>I
+
 - [Golang](https://go.dev/)
 - Java
