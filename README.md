@@ -47,7 +47,7 @@ curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 
 - Install [Golang](#install-these-on-your-own) first
 
-```base
+```bash
 go install github.com/simonwhitaker/gibo@latest
 ```
 
@@ -55,7 +55,7 @@ go install github.com/simonwhitaker/gibo@latest
 
 - Install [Golang](#install-these-on-your-own) first
 
-```base
+```bash
 go install github.com/eslam-allam/spring-initializer-go/cmd/spring-initializer@latest
 ```
 
