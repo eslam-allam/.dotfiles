@@ -23,6 +23,8 @@ My personal configurations managed by stow
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 ```
 
+> Ensure kitty is version > 0.35.2 or on nightly version
+
 ### Atuin
 
 - Install
