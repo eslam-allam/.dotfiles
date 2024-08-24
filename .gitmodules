@@ -10,3 +10,6 @@
 	path = dot-zprezto
 	url = https://github.com/eslam-allam/.zprezto.git
     branch = master
+[submodule "dot-local/themes/thunderbird/catppuccin"]
+	path = dot-local/themes/thunderbird/catppuccin
+	url = https://github.com/catppuccin/thunderbird.git
