@@ -225,6 +225,30 @@ table.insert(keys, {
 local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 tabline.setup({
 	extensions = { "smart_workspace_switcher", "resurrect" },
+	sections = {
+		tab_active = {
+			"index",
+			{ "cwd", padding = { left = 0, right = 1 } },
+			{ "zoomed", padding = 0 },
+		},
+		tab_inactive = {
+			"index",
+
+			{
+				"process",
+				icons_only = true,
+				padding = { left = 0, right = 0 },
+			},
+			{
+				"tab",
+				icons_enabled = false,
+				fmt = function(str, tab)
+					return tab.tab_title ~= "" and str or tab.active_pane.foreground_process_name:match("([^/]+)$")
+				end,
+				padding = { left = 0, right = 1 },
+			},
+		},
+	},
 })
 tabline.apply_to_config(config)
 
