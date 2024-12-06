@@ -159,6 +159,12 @@ table.insert(keys, {
 	action = wezterm.action.ActivateCopyMode,
 })
 
+table.insert(keys, {
+	key = "d",
+	mods = "LEADER",
+	action = wezterm.action.ShowDebugOverlay,
+})
+
 --- COPY MODE
 
 table.insert(copy_mode_keys, { key = "PageDown", mods = "NONE", action = act.CopyMode("PageDown") })
