@@ -91,6 +91,12 @@ table.insert(keys, {
 })
 
 table.insert(keys, {
+	key = ";",
+	mods = "LEADER",
+	action = wezterm.action.ActivateCommandPalette,
+})
+
+table.insert(keys, {
 	key = "z",
 	mods = "LEADER",
 	action = wezterm.action.TogglePaneZoomState,
