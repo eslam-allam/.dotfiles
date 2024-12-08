@@ -266,7 +266,9 @@ config.key_tables = key_tables
 config.mouse_bindings = mouse_bindings
 
 config.window_background_opacity = 0.9
-config.window_decorations = "NONE"
+if not is_windows then
+	config.window_decorations = "NONE"
+end
 
 if is_windows then
 	wezterm.on("gui-startup", function(cmd)
