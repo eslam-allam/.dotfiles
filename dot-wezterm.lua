@@ -243,7 +243,7 @@ tabline.setup({
 				"tab",
 				icons_enabled = false,
 				fmt = function(str, tab)
-					return tab.tab_title ~= "" and str or tab.active_pane.foreground_process_name:match("([^/]+)$")
+					return tab.tab_title ~= "" and str or tab.active_pane.foreground_process_name:match("([^/\\]+)$")
 				end,
 				padding = { left = 0, right = 1 },
 			},
