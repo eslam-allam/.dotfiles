@@ -165,6 +165,18 @@ table.insert(keys, {
 	action = wezterm.action.ShowDebugOverlay,
 })
 
+table.insert(keys, {
+	key = "=",
+	mods = "CTRL",
+	action = wezterm.action.IncreaseFontSize,
+})
+
+table.insert(keys, {
+	key = "-",
+	mods = "CTRL",
+	action = wezterm.action.DecreaseFontSize,
+})
+
 --- COPY MODE
 
 table.insert(copy_mode_keys, { key = "PageDown", mods = "NONE", action = act.CopyMode("PageDown") })
@@ -264,6 +276,7 @@ config.disable_default_key_bindings = true
 config.keys = keys
 config.key_tables = key_tables
 config.mouse_bindings = mouse_bindings
+config.adjust_window_size_when_changing_font_size = false
 
 config.window_background_opacity = 0.9
 if not is_windows then
