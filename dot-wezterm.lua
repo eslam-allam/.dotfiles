@@ -177,6 +177,12 @@ table.insert(keys, {
 	action = wezterm.action.DecreaseFontSize,
 })
 
+table.insert(keys, {
+	key = "+",
+	mods = "CTRL|SHIFT",
+	action = wezterm.action.ResetFontSize,
+})
+
 --- COPY MODE
 
 table.insert(copy_mode_keys, { key = "PageDown", mods = "NONE", action = act.CopyMode("PageDown") })
