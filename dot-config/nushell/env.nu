@@ -100,17 +100,6 @@ $env.NU_PLUGIN_DIRS = [
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
 #
-
-# Check for and source Gradle config
-if ('/etc/profile.d/gradle.nu' | path exists) {
-  source /etc/profile.d/gradle.nu
-}
-
-# Check for and source Maven config
-if ('/etc/profile.d/maven.nu' | path exists) {
-  source /etc/profile.d/maven.nu
-}
-
 # Tmux
 if ('TMUX' in $env) {
   $env.TERM = "tmux-256color"
@@ -121,9 +110,13 @@ $env.PATH = ($env.PATH | append '~/.cargo/bin')
 
 $env.PANDOC_CONFIG = "~/.pandoc"
 
-zoxide init nushell | save -f ~/.zoxide.nu
+mkdir ~/.cache/starship
+starship init nu | save -f ($nu.home-path | path join ".cache" "starship" "init.nu")
+$env.STARSHIP_CONFIG = $nu.home-path | path join ".config" "starship" "starship.toml"
+
+zoxide init nushell | save -f ($nu.home-path | path join ".zoxide.nu")
 
 # Carapace completion
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
 mkdir ~/.cache/carapace
-carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+carapace _carapace nushell | save --force ($nu.home-path | path join ".cache" "carapace" "init.nu")

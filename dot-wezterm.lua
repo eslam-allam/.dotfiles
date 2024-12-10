@@ -194,7 +194,7 @@ table.insert(copy_mode_keys, { key = "u", mods = "CTRL", action = act.CopyMode("
 ---
 
 if is_windows then
-	config.default_prog = { "C:/Program Files/Git/bin/bash.exe" }
+	config.default_prog = { "C:/Users/eslam.allam/AppData/Local/Programs/nu/bin/nu" }
 end
 
 -- Plugins
