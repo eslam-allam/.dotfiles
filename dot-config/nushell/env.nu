@@ -114,7 +114,7 @@ mkdir ~/.cache/starship
 starship init nu | save -f ($nu.home-path | path join ".cache" "starship" "init.nu")
 $env.STARSHIP_CONFIG = $nu.home-path | path join ".config" "starship" "starship.toml"
 
-zoxide init nushell | save -f ($nu.home-path | path join ".zoxide.nu")
+zoxide init nushell --cmd cd | save -f ($nu.home-path | path join ".zoxide.nu")
 
 # Carapace completion
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
