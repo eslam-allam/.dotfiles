@@ -1055,6 +1055,7 @@ $env.config = {
 }
 
 use ~/.cache/starship/init.nu
+use 'conda.nu'
 source ~/.zoxide.nu
 source ~/.cache/carapace/init.nu
 
