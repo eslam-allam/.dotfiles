@@ -901,6 +901,4 @@ use ~/.cache/starship/init.nu
 source ~/.zoxide.nu
 source ~/.cache/carapace/init.nu
 
-source aliases.nu
-alias gen-aliases = nu ($nu.home-path | path join ".config" "nushell" "gen-aliases.nu") and source ($nu.home-path | path join ".config" "nushell" "aliases.nu")
-
+alias la = eza --header --long --all --group --icons auto
