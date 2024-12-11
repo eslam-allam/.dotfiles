@@ -107,16 +107,29 @@ if ('TMUX' in $env) {
 
 $env.PATH = ($env.PATH | append '~/.local/bin')
 $env.PATH = ($env.PATH | append '~/.cargo/bin')
+$env.XDG_CONFIG_HOME = $nu.home-path | path join ".config"
 
 $env.PANDOC_CONFIG = "~/.pandoc"
 
-mkdir ~/.cache/starship
-starship init nu | save -f ($nu.home-path | path join ".cache" "starship" "init.nu")
+if not (($nu.home-path | path join ".cache" "starship" "init.nu") | path exists) {
+    mkdir ~/.cache/starship
+    starship init nu | save -f ($nu.home-path | path join ".cache" "starship" "init.nu")
+}
 $env.STARSHIP_CONFIG = $nu.home-path | path join ".config" "starship" "starship.toml"
 
-zoxide init nushell --cmd cd | save -f ($nu.home-path | path join ".zoxide.nu")
+if not (($nu.home-path | path join ".zoxide.nu") | path exists) {
+    zoxide init nushell --cmd cd | save -f ($nu.home-path | path join ".zoxide.nu")
+}
 
 # Carapace completion
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
-mkdir ~/.cache/carapace
-carapace _carapace nushell | save --force ($nu.home-path | path join ".cache" "carapace" "init.nu")
+
+if not (($nu.home-path | path join ".cache" "carapace" "init.nu") | path exists) {
+    mkdir ~/.cache/carapace
+    carapace _carapace nushell | save --force ($nu.home-path | path join ".cache" "carapace" "init.nu")
+}
+
+if not ('~/.local/share/atuin/init.nu' | path exists) {
+    mkdir ~/.local/share/atuin/
+    atuin init nu | save ~/.local/share/atuin/init.nu
+}

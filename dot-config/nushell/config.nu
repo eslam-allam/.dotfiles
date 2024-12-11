@@ -1058,5 +1058,6 @@ use ~/.cache/starship/init.nu
 use 'conda.nu'
 source ~/.zoxide.nu
 source ~/.cache/carapace/init.nu
+source ~/.local/share/atuin/init.nu
 
 alias la = eza --header --long --all --group --icons auto
