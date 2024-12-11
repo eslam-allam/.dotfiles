@@ -3,3 +3,5 @@ dot-config/tmux/plugins
 dot-config/tmux/tmux-client-91333.log
 dot-local/share/icons/hicolor
 dot-config/nushell/history.txt
+dot-cache/starship
+dot-local/share/icons
