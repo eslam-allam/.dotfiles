@@ -1051,6 +1051,19 @@ $env.config = {
             mode: emacs
             event: { edit: selectall }
         }
+        {
+            name: accept_suggestion
+            modifier: control
+            keycode: char_n
+            mode: [emacs, vi_normal, vi_insert]
+            event: {  
+                until: [
+                  { send: historyhintcomplete }
+                  { send: menuright }
+                  { send: right }
+              ] 
+            }
+        }
     ]
 }
 
