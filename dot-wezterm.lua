@@ -142,6 +142,12 @@ table.insert(keys, {
 })
 
 table.insert(keys, {
+	key = "[",
+	mods = "CTRL",
+	action = act.SendKey({ key = "Escape", mods = "NONE" }),
+})
+
+table.insert(keys, {
 	key = "c",
 	mods = "SHIFT|CTRL",
 	action = wezterm.action.CopyTo("ClipboardAndPrimarySelection"),
