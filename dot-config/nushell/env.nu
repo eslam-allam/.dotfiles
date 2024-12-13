@@ -107,6 +107,8 @@ if ('TMUX' in $env) {
 
 $env.PATH = ($env.PATH | append '~/.local/bin')
 $env.PATH = ($env.PATH | append '~/.cargo/bin')
+$env.PATH = ($env.PATH | append '~/miniconda3/bin')
+
 $env.XDG_CONFIG_HOME = $nu.home-path | path join ".config"
 
 $env.PANDOC_CONFIG = "~/.pandoc"
