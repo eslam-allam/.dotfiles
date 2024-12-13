@@ -97,6 +97,12 @@ table.insert(keys, {
 })
 
 table.insert(keys, {
+	key = "/",
+	mods = "LEADER",
+	action = wezterm.action.Search("CurrentSelectionOrEmptyString"),
+})
+
+table.insert(keys, {
 	key = "z",
 	mods = "LEADER",
 	action = wezterm.action.TogglePaneZoomState,
@@ -208,6 +214,12 @@ table.insert(copy_mode_keys, { key = "d", mods = "CTRL", action = act.CopyMode("
 
 table.insert(copy_mode_keys, { key = "PageUp", mods = "NONE", action = act.CopyMode("PageUp") })
 table.insert(copy_mode_keys, { key = "u", mods = "CTRL", action = act.CopyMode("PageUp") })
+
+table.insert(copy_mode_keys, {
+	key = "/",
+	mods = "NONE",
+	action = wezterm.action.Search("CurrentSelectionOrEmptyString"),
+})
 
 ---
 
