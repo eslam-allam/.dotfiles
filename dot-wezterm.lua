@@ -173,13 +173,13 @@ table.insert(keys, {
 
 table.insert(keys, {
 	key = "PageUp",
-	mods = "NONE",
+	mods = "LEADER",
 	action = wezterm.action.ActivateCopyMode,
 })
 
 table.insert(keys, {
 	key = "PageDown",
-	mods = "NONE",
+	mods = "LEADER",
 	action = wezterm.action.ActivateCopyMode,
 })
 
