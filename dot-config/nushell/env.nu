@@ -132,6 +132,10 @@ if not (($nu.home-path | path join ".cache" "carapace" "init.nu") | path exists)
     carapace _carapace nushell | save --force ($nu.home-path | path join ".cache" "carapace" "init.nu")
 }
 
+if (($env.HOME | path join ".atuin" "bin") | path exists) {
+    $env.PATH = ($env.PATH | append ($env.HOME | path join ".atuin" "bin"))
+}
+
 if not ('~/.local/share/atuin/init.nu' | path exists) {
     mkdir ~/.local/share/atuin/
     atuin init nu | save ~/.local/share/atuin/init.nu
