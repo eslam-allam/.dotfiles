@@ -304,7 +304,7 @@ tabline.apply_to_config(config)
 
 --- Default config settings
 config.color_scheme = "Catppuccin Mocha"
-config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Medium" })
+config.font = wezterm.font("JetBrainsMono NF", { weight = "Medium" })
 config.font_size = 12
 config.launch_menu = launch_menu
 config.default_cursor_style = "BlinkingBar"
@@ -314,7 +314,7 @@ config.key_tables = key_tables
 config.mouse_bindings = mouse_bindings
 config.adjust_window_size_when_changing_font_size = false
 
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.7
 if not is_windows then
 	config.window_decorations = "NONE"
 end
