@@ -304,7 +304,12 @@ tabline.apply_to_config(config)
 
 --- Default config settings
 config.color_scheme = "Catppuccin Mocha"
-config.font = wezterm.font("JetBrainsMono NF", { weight = "Medium" })
+config.font = wezterm.font_with_fallback({
+  { family = "JetBrainsMono Nerd Font", weight = "Medium" },
+  'Noto Color Emoji',
+})
+
+config.bidi_enabled = true
 config.font_size = 12
 config.launch_menu = launch_menu
 config.default_cursor_style = "BlinkingBar"
