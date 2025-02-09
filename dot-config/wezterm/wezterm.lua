@@ -319,7 +319,9 @@ config.key_tables = key_tables
 config.mouse_bindings = mouse_bindings
 config.adjust_window_size_when_changing_font_size = false
 
-config.window_background_opacity = 0.7
+if not is_windows then
+  config.window_background_opacity = 0.7
+end
 if not is_windows then
 	config.window_decorations = "NONE"
 end
