@@ -306,6 +306,7 @@ tabline.apply_to_config(config)
 config.color_scheme = "Catppuccin Mocha"
 config.font = wezterm.font_with_fallback({
   { family = "JetBrainsMono Nerd Font", weight = "Medium" },
+  'Symbola',
   'Noto Color Emoji',
 })
 
