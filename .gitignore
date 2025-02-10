@@ -5,3 +5,4 @@ dot-local/share/icons/hicolor
 dot-config/nushell/history.txt
 dot-cache/starship
 dot-local/share/icons
+dot-config/tmux/tmux-client-41829.log
