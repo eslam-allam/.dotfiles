@@ -262,7 +262,7 @@ let catppuccin = {
   }
 }
 
-$env.LS_COLORS = ((cat ($nu.default-config-dir | path join 'ls-colors')) | str trim)
+$env.LS_COLORS = (($nu.default-config-dir | path join 'ls-colors') | str trim)
 
 let stheme = $catppuccin.mocha
 let theme = {
