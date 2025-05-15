@@ -1,0 +1,54 @@
+//* ---- 💫 https://github.com/JaKooLit 💫 ---- *//
+/* Waybar Modules Extras */
+
+/* This is where you can add Extra Modules you wish. copy.sh will try to restore*/
+/* this file along with the unique configs and styles. */
+/* IMPORTANT, be mindful with , or ". else waybar will not start */
+
+{
+    "custom/gpu-usage": {
+		"format": " {percentage}% {icon} ",
+		"format-alt": " {}°C 󰈸",
+		"interval": 2,
+		"exec": "$HOME/.config/hypr/UserScripts/GpuUsage.sh",
+		"return-type": "json",
+		"format-icons": [ "󰝦", 
+              "󰪞", 
+              "󰪟", 
+              "󰪠",
+              "󰪡",
+              "󰪢", 
+              "󰪣", 
+              "󰪤", 
+              "󰪥" ],
+        "tooltip": true,
+		"on-click-right": "kitty nvtop",
+	},
+    "custom/gpu-memory": {
+		"format": " {percentage}% {icon} ",
+		"format-alt": " {}MB  ",
+		"interval": 2,
+		"exec": "$HOME/.config/hypr/UserScripts/GpuMemory.sh",
+		"return-type": "json",
+		"format-icons": [ "󰝦", 
+              "󰪞", 
+              "󰪟", 
+              "󰪠",
+              "󰪡",
+              "󰪢", 
+              "󰪣", 
+              "󰪤", 
+              "󰪥" ],
+        "tooltip": true,
+		"on-click-right": "kitty nvtop",
+	},
+    "custom/wf-recorder": {
+            "format": "{}",
+            "interval": "once",
+            "exec": "echo ''",
+            "tooltip": "false",
+            "exec-if": "pgrep 'wf-recorder'",
+            "on-click": "exec $HOME/.config/hypr/UserScripts/WlRecord.sh",
+            "signal": 8
+        }
+}
