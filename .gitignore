@@ -16,3 +16,4 @@ dot-config/rofi/.current_wallpaper
 dot-config/waybar/wallust
 dot-config/waybar/config
 dot-config/waybar/style.css
+dot-config/kitty/kitty-colors.conf
