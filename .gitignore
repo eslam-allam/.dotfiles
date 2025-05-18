@@ -14,3 +14,5 @@ dot-config/kitty/kitty-themes/01-Wallust.conf
 dot-config/rofi/wallust
 dot-config/rofi/.current_wallpaper
 dot-config/waybar/wallust
+dot-config/waybar/config
+dot-config/waybar/style.css
