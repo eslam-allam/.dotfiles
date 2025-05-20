@@ -207,7 +207,7 @@ window#waybar.empty #window {
     background-color: @backgrounddark;
     color: @textcolor1;
     border-radius: 5px 5px 5px 5px;
-    padding: 0px 10px 0px 10px;
+    padding: 0px 12px 0px 10px;
     margin: 2px 17px 2px 0px;
     border:3px solid @bordercolor;
 }
@@ -216,7 +216,7 @@ window#waybar.empty #window {
     background-color: @backgrounddark;
     color: @textcolor1;
     border-radius: 5px 5px 5px 5px;
-    padding: 0px 0px 0px 6px;
+    padding: 0px 6px 0px 3px;
     border:3px solid @bordercolor;
 }
 
