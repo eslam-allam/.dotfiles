@@ -1,4 +1,5 @@
-//* ---- 💫 https://github.com/JaKooLit 💫 ---- *//
+/* vim: set ft=jsonc: */
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Waybar Modules Extras */
 
 /* This is where you can add Extra Modules you wish. copy.sh will try to restore*/

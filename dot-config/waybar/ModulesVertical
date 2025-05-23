@@ -1,4 +1,5 @@
-//* ---- 💫 https://github.com/JaKooLit 💫 ---- *//
+/* vim: set ft=jsonc: */
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Waybar Modules for vertical modules or vertical layout */
 
 /* NOTE: hyprland-workspaces, Custom Modules & Groups on a separate files */

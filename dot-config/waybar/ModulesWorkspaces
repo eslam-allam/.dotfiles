@@ -1,4 +1,5 @@
-//* ---- 💫 https://github.com/JaKooLit 💫 ---- *//
+/* vim: set ft=jsonc: */
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Waybar Workspaces modules */
 
 /* Generally, this is a potential expanding of choices for hyprland/workspace */
