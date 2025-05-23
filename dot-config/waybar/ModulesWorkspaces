@@ -209,6 +209,7 @@
 		"title<.*whatsapp.*>": " ",
         "title<.*zapzap.*>": " ",
 		"title<.*messenger.*>": " ",
+        "title<.*[Mm]essenger [Cc]all.*": "(  )",
 		"title<.*facebook.*>": " ",
 		"title<.*reddit.*>": " ",
 
