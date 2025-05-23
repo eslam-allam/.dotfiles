@@ -263,6 +263,8 @@
    	"class<org.pipewire.Helvum>": "󰓃",
     "class<localsend>":"",
     "class<PrusaSlicer|UltiMaker-Cura|OrcaSlicer>": "󰹛",
+    "class<Msty>": " ",
+    "class<org\\.kde\\.okular>": ""
 		}
 	},
 }
