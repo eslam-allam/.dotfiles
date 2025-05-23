@@ -240,8 +240,11 @@
 		"title<.*github.*>": " ",
 		"class<mousepad>": " ",
 		"class<libreoffice-writer>": " ",
+        "class<wps> title<.*Writer.*>": " ",
 		"class<libreoffice-startcenter>": "󰏆 ",
+        "class<wpp>": "󱎐 ",
 		"class<libreoffice-calc>": " ",
+        "class<et> title<.*Spreadsheets.*>": "󱎏 ",
 		"title<.*nvim ~.*>": " ",
 		"title<.*vim.*>": " ",
 		"title<.*nvim.*>": " ",
@@ -264,7 +267,7 @@
     "class<localsend>":"",
     "class<PrusaSlicer|UltiMaker-Cura|OrcaSlicer>": "󰹛",
     "class<Msty>": " ",
-    "class<org\\.kde\\.okular>": ""
+    "class<org\\.kde\\.okular|pdf>": ""
 		}
 	},
 }
