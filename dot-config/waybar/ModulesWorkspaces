@@ -267,7 +267,7 @@
         "class<localsend>":"",
         "class<PrusaSlicer|UltiMaker-Cura|OrcaSlicer>": "󰹛",
         "class<Msty>": " ",
-        "class<org\\.kde\\.okular|pdf>": "",
+        "class<org\\.kde\\.okular|pdf|org\\.pwmt\\.zathura>": "",
         "class<[Zz]otero>": " "
 		}
 	},
