@@ -46,7 +46,7 @@
     "custom/wf-recorder": {
             "format": "{}",
             "interval": "once",
-            "exec": "echo '  '",
+            "exec": "echo ' '",
             "tooltip": "false",
             "exec-if": "pgrep 'wf-recorder'",
             "on-click": "exec $HOME/.config/hypr/UserScripts/WlRecord.sh",
