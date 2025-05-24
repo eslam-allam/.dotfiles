@@ -104,11 +104,14 @@ else
 		notify-send "Recording Cancelled" --app-name="wf-recorder" --icon=media-record
 		rm -f "$DIRECTORY/$FILENAME"
 	else
-		notify-send "Recording Complete" --app-name="wf-recorder" --icon=media-record
 		name="$(zenity --entry --text "enter a filename")"
+		if [ -n "$name" ]; then
+			name="$name."
+		fi
 		extension="${FILENAME##*.}"
 		filename="${FILENAME%.*}"
-		mv "$DIRECTORY/$FILENAME" "$DIRECTORY/$filename.$name.$extension"
+		mv "$DIRECTORY/$FILENAME" "$DIRECTORY/$filename.$name$extension"
+		notify-send "Recording Complete" --app-name="wf-recorder" --icon=media-record
 	fi
 	pkill -RTMIN+8 waybar
 fi
