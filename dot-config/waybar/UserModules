@@ -46,7 +46,7 @@
     "custom/wf-recorder": {
             "format": "{icon} {text}",
             "format-icons": { "idle": " ", "recording": " "},
-            "interval": "once",
+            "interval": 1,
             "signal": 8,
             "exec": "$HOME/.config/hypr/UserScripts/WlRecord.sh -status",
             "return-type": "json",

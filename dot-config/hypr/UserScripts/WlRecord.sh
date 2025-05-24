@@ -25,7 +25,6 @@ if [ "$1" = '-status' ]; then
 		ICON="idle"
 	fi
 	printf '{"class": "%s", "tooltip": "%s", "alt": "%s", "text": "%s"}' "$CLASS" "$TOOLTIP" "$ICON" "$DURATION" | jq --unbuffered --compact-output
-	pkill -RTMIN+8 waybar
 	exit 0
 fi
 
