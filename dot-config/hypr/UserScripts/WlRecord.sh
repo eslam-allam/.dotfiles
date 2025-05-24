@@ -22,6 +22,17 @@ if [ "$1" = '-status' ]; then
 	exit 0
 fi
 
+
+if [ ! -x "$(command -v wf-recorder)" ]; then
+    notify-send "Missing Binary" "wf-recorder not available. Please install it if you wish to use this script." --app-name="wf-recorder" --icon=media-record --urgency=critical
+    exit 0
+fi
+
+if [ ! -x "$(command -v perl-rename)" ]; then
+    notify-send "Missing Binary" "perl-rename is not available. Please install it if you wish to use this script" --app-name="wf-recorder" --icon=media-record --urgency=critical
+    exit 0
+fi
+
 active=$(pactl get-default-source)
 
 filename=$(date +%F_%T.mkv)
