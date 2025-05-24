@@ -1,16 +1,4 @@
 #!/bin/bash
-
-active=$(pactl get-default-source)
-
-filename=$(date +%F_%T.mkv)
-
-DIRECTORY="$HOME/Videos/Recordings"
-MONITOR="$(hyprctl activeworkspace -j | jq .monitor | xargs)"
-
-if [ ! -d "$DIRECTORY" ]; then
-	mkdir -p "$DIRECTORY"
-fi
-
 if [ "$1" = '-status' ]; then
 	WF_PROCCESS="$(pgrep -x 'wf-recorder')"
 	if [ -z "$WF_PROCCESS" ]; then
@@ -32,6 +20,17 @@ if [ "$1" = '-status' ]; then
 	printf '{"class": "%s", "tooltip": "%s", "alt": "%s", "text": "%s"}' "$CLASS" "$TOOLTIP" "$ICON" "$DURATION" | jq --unbuffered --compact-output
 	pkill -RTMIN+8 waybar
 	exit 0
+fi
+
+active=$(pactl get-default-source)
+
+filename=$(date +%F_%T.mkv)
+
+DIRECTORY="$HOME/Videos/Recordings"
+MONITOR="$(hyprctl activeworkspace -j | jq .monitor | xargs)"
+
+if [ ! -d "$DIRECTORY" ]; then
+	mkdir -p "$DIRECTORY"
 fi
 
 if [ -z $(pgrep wf-recorder) ]; then
