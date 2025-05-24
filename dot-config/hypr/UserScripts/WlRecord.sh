@@ -22,15 +22,14 @@ if [ "$1" = '-status' ]; then
 	exit 0
 fi
 
-
 if [ ! -x "$(command -v wf-recorder)" ]; then
-    notify-send "Missing Binary" "wf-recorder not available. Please install it if you wish to use this script." --app-name="wf-recorder" --icon=media-record --urgency=critical
-    exit 0
+	notify-send "Missing Binary" "wf-recorder not available. Please install it if you wish to use this script." --app-name="wf-recorder" --icon=media-record --urgency=critical
+	exit 0
 fi
 
 if [ ! -x "$(command -v perl-rename)" ]; then
-    notify-send "Missing Binary" "perl-rename is not available. Please install it if you wish to use this script" --app-name="wf-recorder" --icon=media-record --urgency=critical
-    exit 0
+	notify-send "Missing Binary" "perl-rename is not available. Please install it if you wish to use this script" --app-name="wf-recorder" --icon=media-record --urgency=critical
+	exit 0
 fi
 
 active=$(pactl get-default-source)
@@ -66,10 +65,10 @@ if [ -z $(pgrep wf-recorder) ]; then
 	elif [ "$1" = '-middle' ]; then
 		WINDOWS="$(hyprctl clients -j | jq --argjson active "$(hyprctl monitors -j | jq -c '[.[].activeWorkspace.id]')" \
 			'.[] | select((.hidden | not) and .workspace.id as $id | $active | contains([$id])) | "\(.class) - \(.title):::\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' -r)"
-    if [ -z "$WINDOWS" ]; then
-      notify-send "No windows" "There are no windows to select in active workspace(s)." --app-name="wf-recorder" --icon=media-record
-      exit 0
-    fi
+		if [ -z "$WINDOWS" ]; then
+			notify-send "No windows" "There are no windows to select in active workspace(s)." --app-name="wf-recorder" --icon=media-record
+			exit 0
+		fi
 		WINDOW_COORDS="$(echo "$WINDOWS" | awk -F ':::' '{print $2}')"
 		COARDINATES="$(echo "$WINDOW_COORDS" | slurp -c '#FFFFFF')"
 		if [ $? -ne 0 ]; then
