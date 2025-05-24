@@ -384,7 +384,3 @@ window#waybar.empty #window {
     padding: 0 6px 0 3px;
     color: @iconcolor;
 }
-
-#custom-wf-recorder.recording {
-    color: @workspacesbackground2;
-}
