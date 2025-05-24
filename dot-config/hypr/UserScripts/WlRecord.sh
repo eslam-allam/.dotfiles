@@ -1,12 +1,19 @@
 #!/bin/bash
+
+STATUS_FILE=/tmp/wl-record-status
+STATUS="$(cat "$STATUS_FILE" 2>/dev/null)"
+if [ -n "$STATUS" ]; then
+	PROCESS="$(echo "$STATUS" | head -n 1)"
+	FILENAME="$(echo "$STATUS" | tail -n 1)"
+fi
+
 if [ "$1" = '-status' ]; then
-	WF_PROCCESS="$(pgrep -x 'wf-recorder')"
-	if [ -z "$WF_PROCCESS" ]; then
+	if [ -z "$PROCESS" ]; then
 		RECORDING=false
 		DURATION=""
 	else
 		RECORDING=true
-		DURATION="$(ps -o etime= -p "$(echo "$WF_PROCCESS" | head -n 1)" | xargs)"
+		DURATION="$(ps -o etime= -p "$PROCESS" | xargs)"
 	fi
 	if [ "$RECORDING" = true ]; then
 		CLASS="recording"
@@ -27,11 +34,6 @@ if [ ! -x "$(command -v wf-recorder)" ]; then
 	exit 0
 fi
 
-if [ ! -x "$(command -v perl-rename)" ]; then
-	notify-send "Missing Binary" "perl-rename is not available. Please install it if you wish to use this script" --app-name="wf-recorder" --icon=media-record --urgency=critical
-	exit 0
-fi
-
 active=$(pactl get-default-source)
 
 filename=$(date +%F_%T.mkv)
@@ -43,7 +45,7 @@ if [ ! -d "$DIRECTORY" ]; then
 	mkdir -p "$DIRECTORY"
 fi
 
-if [ -z $(pgrep wf-recorder) ]; then
+if [ -z "$PROCESS" ]; then
 	if [ -n "$active" ]; then
 		RECORDING_DEVICE="$(pactl -f json list sources | jq ".[] | select(.name==\"$active\").properties.\"alsa.card_name\"")"
 	else
@@ -92,17 +94,21 @@ if [ -z $(pgrep wf-recorder) ]; then
 		wf-recorder -f "$DIRECTORY/$filename" -a "$active" -g "$COARDINATES" >/dev/null 2>&1 &
 		pkill -RTMIN+8 waybar
 	fi
+	printf "%s\n%s" "$!" "$filename" | tee "$STATUS_FILE" >/dev/null
 	notify-send "Recording Started" "Microphone: $RECORDING_DEVICE\nMode: $MODE" --app-name="wf-recorder" --icon=media-record
 else
-	killall -s SIGINT wf-recorder
-	while [ -n "$(pgrep -x wf-recorder)" ]; do wait; done
+	echo "" | tee "$STATUS_FILE" >/dev/null
+	kill -s SIGINT "$PROCESS"
+	while ps -p "$PROCESS" >/dev/null; do wait; done
 	if [ "$1" = "-secondary" ]; then
 		notify-send "Recording Cancelled" --app-name="wf-recorder" --icon=media-record
-		rm -f "$(ls -d "$DIRECTORY"/* -t | head -n1)"
+		rm -f "$DIRECTORY/$FILENAME"
 	else
 		notify-send "Recording Complete" --app-name="wf-recorder" --icon=media-record
 		name="$(zenity --entry --text "enter a filename")"
-		perl-rename "s/\.(mkv|mp4)$/ $name $&/" "$(ls -d "$DIRECTORY"/* -t | head -n1)"
+		extension="${FILENAME##*.}"
+		filename="${FILENAME%.*}"
+		mv "$DIRECTORY/$FILENAME" "$DIRECTORY/$filename.$name.$extension"
 	fi
 	pkill -RTMIN+8 waybar
 fi
