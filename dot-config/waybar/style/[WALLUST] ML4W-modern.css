@@ -379,3 +379,12 @@ window#waybar.empty #window {
 	min-height: 10px;
 	border-radius: 5px;
 }
+
+#custom-wf-recorder {
+    padding: 0 6px 0 3px;
+    color: @iconcolor;
+}
+
+#custom-wf-recorder.recording {
+    color: @workspacesbackground2;
+}
