@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 active=$(pactl get-default-source)
 
@@ -20,11 +20,11 @@ if [ "$1" = '-status' ]; then
 	if [ "$RECORDING" = true ]; then
 		CLASS="recording"
 		TOOLTIP="Recording is active. Left Click to stop, right click to cancel."
-    ICON="recording"
+		ICON="recording"
 	else
 		CLASS=""
 		TOOLTIP="Left click to start recording current monitor, right click to record selection, middle click to record window."
-    ICON="idle"
+		ICON="idle"
 	fi
 	printf '{"class": "%s", "tooltip": "%s", "alt": "%s"}' "$CLASS" "$TOOLTIP" "$ICON" | jq --unbuffered --compact-output
 	pkill -RTMIN+8 waybar
@@ -51,8 +51,20 @@ if [ -z $(pgrep wf-recorder) ]; then
 		wf-recorder -o "$MONITOR" -f "$DIRECTORY/$filename" -a "$active" >/dev/null 2>&1 &
 		pkill -RTMIN+8 waybar
 	elif [ "$1" = '-middle' ]; then
-		MODE="Window"
-		COARDINATES="$(hyprctl clients -j | jq --argjson active "$(hyprctl monitors -j | jq -c '[.[].activeWorkspace.id]')" '.[] | select((.hidden | not) and .workspace.id as $id | $active | contains([$id])) | "\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' -r | slurp -c '#FFFFFF')"
+		WINDOWS="$(hyprctl clients -j | jq --argjson active "$(hyprctl monitors -j | jq -c '[.[].activeWorkspace.id]')" \
+      '.[] | select((.hidden | not) and .workspace.id as $id | $active | contains([$id])) | "\(.class) - \(.title):::\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' -r)"
+		WINDOW_COORDS="$(echo "$WINDOWS" | awk -F ':::' '{print $2}')"
+		COARDINATES="$(echo "$WINDOW_COORDS" | slurp -c '#FFFFFF')"
+		TITLE=""
+		while IFS= read -r line; do
+			name=$(printf "%s" "$line" | awk -F ':::' '{print $1}')
+			coords=$(printf "%s" "$line" | awk -F ':::' '{print $2}')
+			if [ "$coords" = "$COARDINATES" ]; then
+				TITLE="$name"
+				break
+			fi
+		done <<<"$WINDOWS"
+		MODE="Window - $TITLE"
 		if [ $? -ne 0 ]; then
 			notify-send "Recording Cancelled" --app-name="wf-recorder" --icon=media-record
 			exit 0
