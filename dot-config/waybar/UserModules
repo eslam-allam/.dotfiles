@@ -44,7 +44,8 @@
 		"on-click-right": "kitty nvtop",
 	},
     "custom/wf-recorder": {
-            "format": " ",
+            "format": "{icon}",
+            "format-icons": { "idle": " ", "recording": " "},
             "interval": "once",
             "signal": 8,
             "exec": "$HOME/.config/hypr/UserScripts/WlRecord.sh -status",

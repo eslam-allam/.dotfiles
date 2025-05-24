@@ -20,11 +20,13 @@ if [ "$1" = '-status' ]; then
 	if [ "$RECORDING" = true ]; then
 		CLASS="recording"
 		TOOLTIP="Recording is active. Left Click to stop, right click to cancel."
+    ICON="recording"
 	else
 		CLASS=""
 		TOOLTIP="Left click to start recording current monitor, right click to record selection, middle click to record window."
+    ICON="idle"
 	fi
-	printf '{"class": "%s", "tooltip": "%s"}' "$CLASS" "$TOOLTIP" | jq --unbuffered --compact-output
+	printf '{"class": "%s", "tooltip": "%s", "alt": "%s"}' "$CLASS" "$TOOLTIP" "$ICON" | jq --unbuffered --compact-output
 	pkill -RTMIN+8 waybar
 	exit 0
 fi
