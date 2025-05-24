@@ -12,10 +12,13 @@ if [ ! -d "$DIRECTORY" ]; then
 fi
 
 if [ "$1" = '-status' ]; then
-	if [ -z "$(pgrep -x 'wf-recorder')" ]; then
+	WF_PROCCESS="$(pgrep -x 'wf-recorder')"
+	if [ -z "$WF_PROCCESS" ]; then
 		RECORDING=false
+		DURATION=""
 	else
 		RECORDING=true
+		DURATION="$(ps -o etime= -p "$(echo "$WF_PROCCESS" | head -n 1)" | xargs)"
 	fi
 	if [ "$RECORDING" = true ]; then
 		CLASS="recording"
@@ -26,7 +29,7 @@ if [ "$1" = '-status' ]; then
 		TOOLTIP="Left click to start recording current monitor, right click to record selection, middle click to record window."
 		ICON="idle"
 	fi
-	printf '{"class": "%s", "tooltip": "%s", "alt": "%s"}' "$CLASS" "$TOOLTIP" "$ICON" | jq --unbuffered --compact-output
+	printf '{"class": "%s", "tooltip": "%s", "alt": "%s", "text": "%s"}' "$CLASS" "$TOOLTIP" "$ICON" "$DURATION" | jq --unbuffered --compact-output
 	pkill -RTMIN+8 waybar
 	exit 0
 fi
@@ -52,7 +55,7 @@ if [ -z $(pgrep wf-recorder) ]; then
 		pkill -RTMIN+8 waybar
 	elif [ "$1" = '-middle' ]; then
 		WINDOWS="$(hyprctl clients -j | jq --argjson active "$(hyprctl monitors -j | jq -c '[.[].activeWorkspace.id]')" \
-      '.[] | select((.hidden | not) and .workspace.id as $id | $active | contains([$id])) | "\(.class) - \(.title):::\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' -r)"
+			'.[] | select((.hidden | not) and .workspace.id as $id | $active | contains([$id])) | "\(.class) - \(.title):::\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' -r)"
 		WINDOW_COORDS="$(echo "$WINDOWS" | awk -F ':::' '{print $2}')"
 		COARDINATES="$(echo "$WINDOW_COORDS" | slurp -c '#FFFFFF')"
 		TITLE=""

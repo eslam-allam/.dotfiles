@@ -44,7 +44,7 @@
 		"on-click-right": "kitty nvtop",
 	},
     "custom/wf-recorder": {
-            "format": "{icon}",
+            "format": "{icon} {text}",
             "format-icons": { "idle": " ", "recording": " "},
             "interval": "once",
             "signal": 8,
