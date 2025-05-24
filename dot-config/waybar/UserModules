@@ -44,12 +44,14 @@
 		"on-click-right": "kitty nvtop",
 	},
     "custom/wf-recorder": {
-            "format": "{}",
+            "format": " ",
             "interval": "once",
-            "exec": "echo ' '",
-            "tooltip": "false",
-            "exec-if": "pgrep 'wf-recorder'",
-            "on-click": "exec $HOME/.config/hypr/UserScripts/WlRecord.sh",
-            "signal": 8
+            "signal": 8,
+            "exec": "$HOME/.config/hypr/UserScripts/WlRecord.sh -status",
+            "return-type": "json",
+            "tooltip": true,
+            "on-click": "exec $HOME/.config/hypr/UserScripts/WlRecord.sh -primary",
+            "on-click-right": "exec $HOME/.config/hypr/UserScripts/WlRecord.sh -secondary",
+            "on-click-middle": "exec $HOME/.config/hypr/UserScripts/WlRecord.sh -middle"
         }
 }
