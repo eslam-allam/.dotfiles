@@ -58,6 +58,10 @@ if [ -z $(pgrep wf-recorder) ]; then
 			'.[] | select((.hidden | not) and .workspace.id as $id | $active | contains([$id])) | "\(.class) - \(.title):::\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' -r)"
 		WINDOW_COORDS="$(echo "$WINDOWS" | awk -F ':::' '{print $2}')"
 		COARDINATES="$(echo "$WINDOW_COORDS" | slurp -c '#FFFFFF')"
+		if [ $? -ne 0 ]; then
+			notify-send "Recording Cancelled" --app-name="wf-recorder" --icon=media-record
+			exit 0
+		fi
 		TITLE=""
 		while IFS= read -r line; do
 			name=$(printf "%s" "$line" | awk -F ':::' '{print $1}')
