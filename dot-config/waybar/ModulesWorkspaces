@@ -212,6 +212,7 @@
         "title<.*[Mm]essenger [Cc]all.*": "(  )",
 		"title<.*facebook.*>": " ",
 		"title<.*reddit.*>": " ",
+		"title<.*[Mm]icrosoft [Tt]eams.*>": "󰊻 ",
 
 
 		"title<.*ChatGPT.*>": "󰚩 ",
