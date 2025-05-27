@@ -35,6 +35,7 @@ view/edit Default Keybinds
 Choose Kitty Terminal Theme
 Configure Monitors (nwg-displays)
 Configure Workspace Rules (nwg-displays)
+Configure User Workspace Rules
 GTK Settings (nwg-look)
 QT Apps Settings (qt6ct)
 QT Apps Settings (qt5ct)
@@ -63,6 +64,7 @@ main() {
         "view/edit Animations") file="$UserConfigs/UserAnimations.conf" ;;
         "view/edit Laptop Keybinds") file="$UserConfigs/Laptops.conf" ;;
         "view/edit Default Keybinds") file="$configs/Keybinds.conf" ;;
+        "Configure User Workspace Rules") file="$UserConfigs/WorkSpaceRules.conf" ;;
         "Choose Kitty Terminal Theme") $scriptsDir/Kitty_themes.sh ;;
         "Configure Monitors (nwg-displays)") 
             if ! command -v nwg-displays &>/dev/null; then
