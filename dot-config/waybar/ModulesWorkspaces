@@ -270,7 +270,9 @@
         "class<PrusaSlicer|UltiMaker-Cura|OrcaSlicer>": "󰹛",
         "class<Msty>": " ",
         "class<org\\.kde\\.okular|pdf|org\\.pwmt\\.zathura>": "",
-        "class<[Zz]otero>": " "
+        "class<[Zz]otero>": " ",
+
+        "class<emu8086.*>": " "
 		}
 	},
 }
