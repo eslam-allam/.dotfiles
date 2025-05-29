@@ -272,7 +272,7 @@
         "class<org\\.kde\\.okular|pdf|org\\.pwmt\\.zathura>": "",
         "class<[Zz]otero>": " ",
 
-        "class<emu8086.*>": " ",
+        "class<emu8086.*|quartus>": " ",
         "class<com.github.iwalton3.jellyfin-media-player>": "󰷝 "
 		}
 	},
