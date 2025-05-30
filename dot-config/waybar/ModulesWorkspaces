@@ -273,6 +273,8 @@
         "class<[Zz]otero>": " ",
 
         "class<emu8086.*|quartus>": " ",
+        "class<[Vv]sim>": " ",
+        "title<.*[Ww]ave.*": " ",
         "class<com.github.iwalton3.jellyfin-media-player>": "󰷝 "
 		}
 	},
