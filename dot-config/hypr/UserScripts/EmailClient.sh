@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-EMAIL_CLIENT="evolution"
-EMAIL_CLIENT_CLASS="org\.gnome\.[Ee]volution"
+EMAIL_CLIENT="thunderbird"
+EMAIL_CLIENT_CLASS="thunderbird"
 
 EMAIL_OPEN="$(pgrep -x $EMAIL_CLIENT)"
 
