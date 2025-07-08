@@ -114,7 +114,8 @@
 			"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
 			"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
 		}
-	}
+	},
+    "on-click-right": "gnome-calendar && hyprctl dispatch movetoworkspace '+0,class:org\\.gnome\\.[Cc]alendar'"
 },
 
 "actions": {
