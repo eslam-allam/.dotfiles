@@ -65,7 +65,7 @@ if [ -z "$PROCESS" ]; then
 		pkill -RTMIN+8 waybar
 	elif [ "$1" = '-middle' ]; then
 		WINDOWS="$(hyprctl clients -j | jq --argjson active "$(hyprctl monitors -j | jq -c '[.[].activeWorkspace.id]')" \
-			'.[] | select((.hidden | not) and .workspace.id as $id | $active | contains([$id])) | "\(.class) - \(.title):::\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' -r)"
+			'.[] | select((.hidden | not) and (.workspace.id as $id | $active | contains([$id]))) | "\(.class) - \(.title):::\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' -r)"
 		if [ -z "$WINDOWS" ]; then
 			notify-send "No windows" "There are no windows to select in active workspace(s)." --app-name="wf-recorder" --icon=media-record
 			exit 0
