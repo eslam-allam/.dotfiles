@@ -98,19 +98,19 @@ menu() {
   done
 }
 
-# Offer SDDM Sequioa Wallpaper Option (only for non-video wallpapers)
+# Offer SDDM Simple Wallpaper Option (only for non-video wallpapers)
 set_sddm_wallpaper() {
   sleep 1
-  sddm_sequoia="/usr/share/sddm/themes/sequoia_2"
+  sddm_simple="/usr/share/sddm/themes/simple_sddm_2"
 
-  if [ -d "$sddm_sequoia" ]; then
+  if [ -d "$sddm_simple" ]; then
 
     # Check if yad is running to avoid multiple notifications
     if pidof yad >/dev/null; then
       killall yad
     fi
 
-    if yad --info --text="Set current wallpaper as SDDM background?\n\nNOTE: This only applies to SEQUOIA SDDM Theme" \
+    if yad --info --text="Set current wallpaper as SDDM background?\n\nNOTE: This only applies to SIMPLE SDDM v2 Theme" \
       --text-align=left \
       --title="SDDM Background" \
       --timeout=5 \
@@ -123,11 +123,9 @@ set_sddm_wallpaper() {
         notify-send -i "$iDIR/error.png" "Missing $terminal" "Install $terminal to enable setting of wallpaper background"
         exit 1
       fi
-
-      # Open terminal to enter password
-      $terminal -e bash -c "echo 'Enter your password to set wallpaper as SDDM Background'; \
-            sudo cp -r $wallpaper_current '$sddm_sequoia/backgrounds/default' && \
-            notify-send -i '$iDIR/ja.png' 'SDDM' 'Background SET'"
+	  
+	  exec $SCRIPTSDIR/sddm_wallpaper.sh --normal
+    
     fi
   fi
 }
@@ -236,4 +234,3 @@ if pidof rofi >/dev/null; then
 fi
 
 main
-
