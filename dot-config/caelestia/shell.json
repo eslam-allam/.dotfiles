@@ -1,0 +1,10 @@
+{
+  "session": {
+    "commands": {
+      "logout": ["hyprctl", "dispatch", "exit"],
+      "shutdown": ["systemctl", "poweroff"],
+      "hibernate": ["systemctl", "suspend"],
+      "reboot": ["systemctl", "reboot"]
+    }
+  }
+}
