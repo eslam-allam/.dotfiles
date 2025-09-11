@@ -17,3 +17,5 @@ dot-config/waybar/config
 dot-config/waybar/style.css
 dot-config/hypr/workspaces.conf
 dot-config/ghostty/themes/Wallust
+dot-config/qt5ct/colors/caelestia.colors
+dot-config/qt6ct/colors/caelestia.colors
