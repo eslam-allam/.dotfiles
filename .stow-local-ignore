@@ -2,4 +2,4 @@
 \.gitignore
 \.gitmodules
 assets
-caelestia
+./caelestia
