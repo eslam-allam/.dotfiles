@@ -1,0 +1,15 @@
+{
+  "toggles": {
+    "communication": {
+      "ferdium": {
+        "enable": true,
+        "match": [{ "class": "ferdium" }],
+        "command": ["ferdium"],
+        "move": true
+      },
+      "discord": {
+        "enable": false
+      }
+    }
+  }
+}
