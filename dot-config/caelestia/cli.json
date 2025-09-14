@@ -10,6 +10,14 @@
       "discord": {
         "enable": false
       }
+    },
+    "email": {
+      "thunderbird": {
+        "enable": true,
+        "match": [{ "class": "thunderbird" }],
+        "command": ["thunderbird"],
+        "move": true
+      }
     }
   }
 }
