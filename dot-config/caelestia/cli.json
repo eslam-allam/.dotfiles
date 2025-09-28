@@ -2,9 +2,21 @@
   "toggles": {
     "communication": {
       "ferdium": {
-        "enable": true,
+        "enable": false,
         "match": [{ "class": "ferdium" }],
         "command": ["ferdium"],
+        "move": true
+      },
+      "teams-work": {
+        "enable": true,
+        "match": [{ "class": "teams-work" }],
+        "command": ["teams-for-linux-work-profile"],
+        "move": true
+      },
+      "teams-school": {
+        "enable": true,
+        "match": [{ "class": "teams-school" }],
+        "command": ["teams-for-linux-school-profile"],
         "move": true
       },
       "discord": {
