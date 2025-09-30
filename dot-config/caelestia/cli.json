@@ -21,6 +21,12 @@
       },
       "discord": {
         "enable": false
+      },
+      "whatsapp": {
+        "enable": true,
+        "match": [{ "class": "WhatsApp Desktop" }],
+        "command": ["whatsapp-linux-desktop"],
+        "move": true
       }
     },
     "email": {
