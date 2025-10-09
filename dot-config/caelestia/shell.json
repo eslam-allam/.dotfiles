@@ -115,6 +115,10 @@
       }
     ]
   },
+  "paths": {
+    "mediaGif": "~/.config/caelestia/headphones-music.gif",
+    "sessionGif": "~/.config/caelestia/archpepe.gif"
+  },
   "session": {
     "commands": {
       "logout": ["hyprctl", "dispatch", "exit"],
