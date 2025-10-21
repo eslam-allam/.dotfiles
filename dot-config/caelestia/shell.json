@@ -121,13 +121,15 @@
         "enabled": true,
         "dangerous": false
       }
-    ]
+    ],
+    "vimKeybinds": true
   },
   "paths": {
     "mediaGif": "~/.config/caelestia/headphones-music.gif",
     "sessionGif": "~/.config/caelestia/archpepe.gif"
   },
   "session": {
+    "vimKeybinds": true,
     "commands": {
       "logout": ["hyprctl", "dispatch", "exit"],
       "shutdown": ["systemctl", "poweroff"],
