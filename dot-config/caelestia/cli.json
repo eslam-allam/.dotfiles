@@ -8,13 +8,13 @@
         "move": true
       },
       "teams-work": {
-        "enable": true,
+        "enable": false,
         "match": [{ "class": "teams-work" }],
         "command": ["teams-for-linux-work-profile"],
         "move": true
       },
       "teams-school": {
-        "enable": true,
+        "enable": false,
         "match": [{ "class": "teams-school" }],
         "command": ["teams-for-linux-school-profile"],
         "move": true
@@ -23,9 +23,15 @@
         "enable": false
       },
       "whatsapp": {
-        "enable": true,
+        "enable": false,
         "match": [{ "class": "WhatsApp Desktop" }],
         "command": ["whatsapp-linux-desktop"],
+        "move": true
+      },
+      "Station": {
+        "enable": true,
+        "match": [{"class": "Station"}],
+        "command": ["station"],
         "move": true
       }
     },
