@@ -12,7 +12,7 @@
           "-t",
           "password",
           "--keybindings",
-          "Alt+u:copy:username"
+          "Alt+u:copy:username,Alt+t:copy:totp"
         ],
         "enabled": true,
         "dangerous": false
