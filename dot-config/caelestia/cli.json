@@ -2,7 +2,7 @@
   "toggles": {
     "communication": {
       "ferdium": {
-        "enable": false,
+        "enable": true,
         "match": [{ "class": "ferdium" }],
         "command": ["ferdium"],
         "move": true
@@ -29,8 +29,8 @@
         "move": true
       },
       "Station": {
-        "enable": true,
-        "match": [{"class": "Station"}],
+        "enable": false,
+        "match": [{ "class": "Station" }],
         "command": ["station"],
         "move": true
       }
