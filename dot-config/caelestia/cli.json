@@ -38,7 +38,11 @@
     "email": {
       "thunderbird": {
         "enable": true,
-        "match": [{ "class": "thunderbird" }],
+        "match": [
+          { "class": "org.mozilla.Thunderbird" },
+          { "class": "org.mozilla.thunderbird" },
+          { "class": "thunderbird" }
+        ],
         "command": ["thunderbird"],
         "move": true
       }
