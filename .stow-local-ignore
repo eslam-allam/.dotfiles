@@ -3,4 +3,5 @@
 \.gitmodules
 assets
 ^/caelestia$
+^/noctalia$
 ^README.*

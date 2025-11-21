@@ -16,3 +16,6 @@
 [submodule "caelestia"]
 	path = caelestia
 	url = https://github.com/eslam-allam/caelestia.git
+[submodule "noctalia"]
+	path = noctalia
+	url = https://github.com/eslam-allam/noctalia.git
