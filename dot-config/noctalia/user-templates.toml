@@ -1,0 +1,7 @@
+[config]
+
+[templates]
+
+[templates.rofi]
+input_path = "~/.config/noctalia/templates/rofi.rasi"
+output_path = "~/.config/rofi/matugen/colors.rasi"
