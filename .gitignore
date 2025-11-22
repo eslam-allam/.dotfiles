@@ -19,3 +19,5 @@ dot-config/hypr/workspaces.conf
 dot-config/ghostty/themes/Wallust
 dot-config/qt5ct/colors/caelestia.colors
 dot-config/qt6ct/colors/caelestia.colors
+dot-config/kitty/themes
+dot-config/kitty/current-theme.conf
