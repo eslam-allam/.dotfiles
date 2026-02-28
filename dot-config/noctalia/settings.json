@@ -470,7 +470,7 @@
     },
     "idle": {
         "customCommands": "[{\"timeout\":150,\"command\":\"brightnessctl -sd rgb:kbd_backlight set 0\"},{\"timeout\":60,\"command\":\"\"}]",
-        "enabled": true,
+        "enabled": false,
         "fadeDuration": 5,
         "lockTimeout": 660,
         "screenOffTimeout": 150,
