@@ -24,3 +24,5 @@ dot-config/kitty/current-theme.conf
 dot-config/qt5ct/colors/noctalia.conf
 dot-config/qt6ct/colors/noctalia.conf
 /dot-config/noctalia/settings.json
+/dot-config/ghostty/themes/noctalia
+/dot-config/kitty/kitty.conf.bak
