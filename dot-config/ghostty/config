@@ -1,3 +1,11 @@
 font-family = "JetBrainsMono Nerd Font"
+font-thicken = true
+font-size = 12
 
-theme = "catppuccin-mocha"
+background-opacity = 0.9
+
+window-padding-y = 0
+window-padding-x = 0
+window-padding-balance=true
+
+theme = noctalia
