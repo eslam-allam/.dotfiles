@@ -32,6 +32,38 @@ enabled = true
 
 [config]
 
+[idle]
+behavior_order = [ "Dim Screen", "Dim Keyboard", "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior."Dim Keyboard"]
+    action = "command"
+    command = "brightnessctl -sd rgb:kbd_backlight set 0"
+    enabled = true
+    resume_command = "brightnessctl -rd rgb:kbd_backlight"
+    timeout = 150.0
+
+    [idle.behavior."Dim Screen"]
+    action = "command"
+    command = "brightnessctl -s set 10"
+    enabled = true
+    resume_command = "brightnessctl -r"
+    timeout = 150.0
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 300.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 330.0
+
 [keybinds]
 down = [ "Down", "Ctrl+n" ]
 up = [ "Up", "Ctrl+p" ]
@@ -102,11 +134,12 @@ record-audio-in = true
 record-audio-out = true
 
 [plugins]
-enabled = [ "alexander/screen-toolkit" ]
+enabled = [ "alexander/screen-toolkit", "noctalia/bitwarden" ]
 
 [shell]
 corner_radius_scale = 0.0
 polkit_agent = true
+time_format = "{:%I:%M %p}"
 
     [shell.greeter_sync]
     auto_sync = true
@@ -136,6 +169,9 @@ path = "/home/eslamallam/Pictures/Wallpapers/Red_Eclipse.png"
 
 [wallpaper.monitors.eDP-1]
 path = "/home/eslamallam/Pictures/Wallpapers/Red_Eclipse.png"
+
+[widget.clock]
+format = "{:%I:%M %p}"
 
 [widget.control-center]
 glyph = "navigation-filled"
